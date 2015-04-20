@@ -63,20 +63,15 @@
                 if (_translateY > 1) {
                     $el.css('transform', 'translate3d(0,-' + _translateY + 'px,0)');
                 }
-            }, 5);
 
-            // using parallax
-            if (option.parallax !== null) {
-
-                setInterval(function() {
-
+                // using parallax
+                if (option.parallax !== null) {
                     // スクロール実行
                     if (_translateY > 1) {
                         $elParallax.css('transform', 'translate3d(0,-' + (_translateY * _parallaxEasing) + 'px,0)');
                     }
-                }, 5);
-
-            }
+                }
+            }, 5);
 
         }
 
