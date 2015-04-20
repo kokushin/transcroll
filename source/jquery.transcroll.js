@@ -89,7 +89,7 @@
         // 実行
         init();
 
-        return(this);
+        return this;
     };
 
 })(jQuery);
