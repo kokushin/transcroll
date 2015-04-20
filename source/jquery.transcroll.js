@@ -1,5 +1,5 @@
 /*
- * transcroll.js v1.0.2
+ * transcroll.js v1.0.3
  *
  * Copyright 2015 @kokushing
  * http://stone.black/
@@ -19,15 +19,15 @@
             parallaxEasing: .5
         };
 
-        var option = $.extend({}, defaults, option);
+        var option         = $.extend({}, defaults, option);
 
-        var $window = $(window);
-        var $el = $(this);
-        var scrollTop = 0;
-        var translateY = 0;
-        var easing = option.easing;
+        var $window        = $(window);
+        var $el            = $(this);
+        var scrollTop      = 0;
+        var translateY     = 0;
+        var easing         = option.easing;
 
-        var $elParallax = $(option.parallax);
+        var $elParallax    = $(option.parallax);
         var parallaxEasing = option.parallaxEasing;
 
         // 初期設定
@@ -45,8 +45,8 @@
             });
 
             // 親要素に高さを設定
-            var _containerHeight = $el.height();
-            $el.parent().height(_containerHeight);
+            var containerHeight = $el.height();
+            $el.parent().height(containerHeight);
 
             // スクロール量を取得
             $(document).on('scroll', function() {
