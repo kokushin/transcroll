@@ -61,10 +61,7 @@
 
                 // スクロール実行
                 if (_translateY > 1) {
-                    $el.css({
-                        '-webkit-transform':'translate3d(0,-' + _translateY + 'px,0)',
-                                'transform':'translate3d(0,-' + _translateY + 'px,0)'
-                    });
+                    $el.css('transform', 'translate3d(0,-' + _translateY + 'px,0)');
                 }
             }, 5);
 
@@ -75,10 +72,7 @@
 
                     // スクロール実行
                     if (_translateY > 1) {
-                        $elParallax.css({
-                            '-webkit-transform':'translate3d(0,-' + (_translateY * _parallaxEasing) + 'px,0)',
-                                    'transform':'translate3d(0,-' + (_translateY * _parallaxEasing) + 'px,0)'
-                        });
+                        $elParallax.css('transform', 'translate3d(0,-' + (_translateY * _parallaxEasing) + 'px,0)');
                     }
                 }, 5);
 
