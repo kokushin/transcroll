@@ -19,7 +19,7 @@
             parallaxEasing: .5
         };
 
-        var option = $.extend(defaults, option);
+        var option = $.extend({}, defaults, option);
 
         var $el = $(this);
         var _scrollTop = 0;
