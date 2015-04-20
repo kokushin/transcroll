@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lasn="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>transcroll</title>
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="transcroll">
+
+    <header class="header">
+      <div class="parallax">
+        <h1>transcroll</h1>
+        <i></i>
+        <p>Achieve a smooth scrolling using CSS Transitions.</p>
+      </div>
+    </header>
+
+    <main class="contents">
+
+      <section class="section section--no1">
+        <h2>section-1</h2>
+      </section>
+
+      <section class="section section--no2">
+        <h2>section-2</h2>
+      </section>
+
+      <section class="section section--no3">
+        <h2>section-3</h2>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <p class="copyright"><small>2015 &copy; @kokushing</small></p>
+    </footer>
+
+  </div>
+
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <script src="js/jquery.transcroll.js"></script>
+
+  <script>
+  $('.transcroll').transcroll({
+    parallax: '.parallax',
+    parallaxEasing: 0.5
+  });
+  </script>
+
+</body>
+</html>
