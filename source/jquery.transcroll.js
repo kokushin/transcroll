@@ -1,5 +1,5 @@
 /*
- * transcroll.js v1.0.0
+ * transcroll.js v1.0.1
  *
  * Copyright 2015 @kokushing
  * http://stone.black/
@@ -14,12 +14,12 @@
     $.fn.transcroll = function(option) {
 
         var defaults = {
-            easing: 0.05,
+            easing: .05,
             parallax: '.parallax',
-            parallaxEasing: 0.5
+            parallaxEasing: .5
         };
 
-        var option = $.extend(defaults, option);
+        var option = $.extend({}, defaults, option);
 
         var $el = $(this);
         var _scrollTop = 0;
@@ -32,7 +32,7 @@
         }
 
         // 初期設定
-        this._init = function() {
+        init = function() {
 
             // 要素追加
             $el.wrap('<div class="ts-container"></div>');
@@ -62,8 +62,7 @@
                 // スクロール実行
                 if (_translateY > 1) {
                     $el.css({
-                        '-webkit-transform':'translate3d(0,-' + _translateY + 'px,0)',
-                                'transform':'translate3d(0,-' + _translateY + 'px,0)'
+                        'transform':'translate3d(0,-' + _translateY + 'px,0)'
                     });
                 }
             }, 5);
@@ -76,8 +75,7 @@
                     // スクロール実行
                     if (_translateY > 1) {
                         $elParallax.css({
-                            '-webkit-transform':'translate3d(0,-' + (_translateY * _parallaxEasing) + 'px,0)',
-                                    'transform':'translate3d(0,-' + (_translateY * _parallaxEasing) + 'px,0)'
+                            'transform':'translate3d(0,-' + (_translateY * _parallaxEasing) + 'px,0)'
                         });
                     }
                 }, 5);
@@ -87,9 +85,9 @@
         };
 
         // 実行
-        this._init();
+        init();
 
-        return(this);
+        return this;
     };
 
 })(jQuery);
