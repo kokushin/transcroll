@@ -32,7 +32,7 @@
         }
 
         // 初期設定
-        this._init = function() {
+        function init() {
 
             // 要素追加
             $el.wrap('<div class="ts-container"></div>');
@@ -84,10 +84,10 @@
 
             }
 
-        };
+        }
 
         // 実行
-        this._init();
+        init();
 
         return(this);
     };
