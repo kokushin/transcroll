@@ -14,9 +14,9 @@
     $.fn.transcroll = function(option) {
 
         var defaults = {
-            easing: 0.05,
+            easing: .05,
             parallax: '.parallax',
-            parallaxEasing: 0.5
+            parallaxEasing: .5
         };
 
         var option = $.extend(defaults, option);
