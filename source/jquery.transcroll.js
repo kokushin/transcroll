@@ -21,6 +21,7 @@
 
         var option = $.extend({}, defaults, option);
 
+        var $window = $(window);
         var $el = $(this);
         var _scrollTop = 0;
         var _translateY = 0;
@@ -51,7 +52,7 @@
 
             // スクロール量を取得
             $(document).on('scroll', function() {
-                _scrollTop = $(window).scrollTop();
+                _scrollTop = $window.scrollTop();
             });
 
             setInterval(function() {
