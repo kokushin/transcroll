@@ -1,5 +1,5 @@
 /*
- * transcroll.js v1.0.1
+ * transcroll.js v1.0.2
  *
  * Copyright 2015 @kokushing
  * http://stone.black/
@@ -21,15 +21,14 @@
 
         var option = $.extend({}, defaults, option);
 
+        var $window = $(window);
         var $el = $(this);
-        var _scrollTop = 0;
-        var _translateY = 0;
-        var _easing = option.easing;
+        var scrollTop = 0;
+        var translateY = 0;
+        var easing = option.easing;
 
-        if (option.parallax !== null) {
-            var $elParallax = $(option.parallax);
-            var _parallaxEasing = option.parallaxEasing;
-        }
+        var $elParallax = $(option.parallax);
+        var parallaxEasing = option.parallaxEasing;
 
         // 初期設定
         init = function() {
@@ -51,36 +50,24 @@
 
             // スクロール量を取得
             $(document).on('scroll', function() {
-                _scrollTop = $(window).scrollTop();
+                scrollTop = $window.scrollTop();
             });
 
             setInterval(function() {
 
                 // スクロール量を更新
-                _translateY += (_scrollTop - _translateY) * _easing;
+                translateY += (scrollTop - translateY) * easing;
 
                 // スクロール実行
-                if (_translateY > 1) {
+                if (translateY > 1) {
                     $el.css({
-                        'transform':'translate3d(0,-' + _translateY + 'px,0)'
+                        'transform':'translate3d(0,-' + translateY + 'px,0)'
+                    });
+                    $elParallax.css({
+                        'transform':'translate3d(0,-' + (translateY * parallaxEasing) + 'px,0)'
                     });
                 }
             }, 5);
-
-            // using parallax
-            if (option.parallax !== null) {
-
-                setInterval(function() {
-
-                    // スクロール実行
-                    if (_translateY > 1) {
-                        $elParallax.css({
-                            'transform':'translate3d(0,-' + (_translateY * _parallaxEasing) + 'px,0)'
-                        });
-                    }
-                }, 5);
-
-            }
 
         };
 
